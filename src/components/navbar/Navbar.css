@@ -1,0 +1,194 @@
+.nav-main-containr {
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  height: 13vh;
+  width: 100%;
+  padding: 1.5rem 3rem;
+  position: relative;
+  /*   left: 4%; */
+  align-items: center;
+}
+
+.nav-perma_linkcontainr {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+.nav-perma_linkcontainr a {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-items {
+  position: relative;
+}
+
+.nav-items:hover {
+  color: var(--primary-color);
+}
+
+.nav-items::after {
+  content: ""; /* Required to create the pseudo-element */
+  display: block;
+  position: absolute;
+  top: -120%; /* Vertically center the border */
+  right: -20px; /* Move the border 10 pixels to the right from the text */
+  height: 12.5vh; /* Set the height of the border to 50% */
+  width: 1px; /* Set the width of the border */
+  background-color: rgba(255, 255, 255, 0.274);
+}
+
+.nav-items-drop::after {
+  content: ""; /* Required to create the pseudo-element */
+  display: block;
+  position: absolute;
+  top: -70%; /* Vertically center the border */
+  right: -10px; /* Move the border 10 pixels to the right from the text */
+  height: 12.5vh; /* Set the height of the border to 50% */
+  width: 1px; /* Set the width of the border */
+  background-color: rgba(255, 255, 255, 0.274);
+}
+
+.nav_social-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav_social-container a {
+  color: white;
+  font-size: 1rem;
+  /*   transition: transform 0.3s ease; */
+}
+
+/* Keyframe animation */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(0.8); /* Initial size */
+  }
+  100% {
+    transform: scale(1.9); /* Zoomed-out size */
+  }
+}
+
+.nav_social-container a:hover {
+  transform: scale(0.8);
+  color: var(--primary-color);
+  animation: zoomInOut 2s infinite alternate;
+}
+
+.custom-dropdown .btn {
+  background: none;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.custom-dropdown .btn:hover {
+  color: var(--primary-color);
+}
+
+.custom-dropdown .dropdown-menu a {
+  color: black;
+}
+
+.custom-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.menu-icon-container {
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 2rem;
+}
+
+/* Show the mobile menu icon on screens smaller than 800px */
+@media (max-width: 800px) {
+  .menu-icon-container {
+    display: block;
+  }
+
+  /* Hide the permanent links container on mobile */
+  .nav-perma_linkcontainr {
+    display: none;
+  }
+
+  /* Show the mobile menu links in a column */
+  .nav-perma_linkcontainr.show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    width: 70%;
+    left: 0;
+    right: 0;
+    background: rgb(255, 255, 255);
+    padding: 1rem 2rem;
+    z-index: 9999;
+    animation: slideInFromTop 0.8s forwards;
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .nav-perma_linkcontainr:not(.show) {
+    animation: slideOutToTop 0.3s forwards;
+
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes slideOutToTop {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .nav-items::after {
+    display: none;
+  }
+
+  .nav-items-drop::after {
+    display: none;
+  }
+  .nav-perma_linkcontainr a {
+    color: rgb(15, 15, 15);
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .custom-dropdown .btn {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 800;
+    padding-left: 0;
+  }
+
+
+
+
+  .nav-main-containr {
+    padding: 1.5rem 1rem;
+
+  }
+  
+}
