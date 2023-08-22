@@ -1,0 +1,129 @@
+.main_testimonial-containr{
+    padding: 3rem 4rem;
+
+
+}
+
+
+
+.test-bordr{
+    border: 2px solid rgba(66, 65, 65, 0.596);
+    padding: 1rem 2rem;
+
+    background-image: url("https://img.freepik.com/premium-vector/world-map-silhouette-digital-simple-grey-map-flat-style-vector-realistic-illustration-earth-isolated-white-background_176516-1332.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+
+}
+
+
+.quote-icon{
+    color: var(--primary-color);
+    font-size: 6rem;
+}
+
+.test-title{
+align-items: center;
+text-align: center;
+
+
+justify-content: center;
+display: flex;
+flex-direction: column;
+margin-top: 1rem;
+margin-bottom: 4rem;
+gap: 1rem;
+}
+
+.test-title h6{
+color: var(--primary-color);
+font-size: 18px;
+font-weight: 800;
+font-style: italic;
+}
+
+.test-title h1{
+text-transform: uppercase;
+font-size: 45px;
+color: black;
+font-weight: 800;
+font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.test-title p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .swiper {
+   /*  width: 100%;
+    height: 50vh; */
+    margin-bottom: 5rem;
+  }
+ 
+
+
+  
+  .swiper-slide {
+display: flex;
+flex-direction: column;
+/* padding: 1rem; */
+  }
+  
+  .swiper-slide img {
+    display: block;
+ width: 4vw;
+ height: 8vh;
+    border-radius: 50%;
+
+  }
+
+
+  .testimial-words{
+    background: rgb(66, 62, 62);
+    color: rgb(233, 224, 224);
+    padding: 1rem;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  
+
+
+  .testi-img-wrappr{
+    display: flex;
+margin-top: 0.5rem;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+  }
+  
+.reviewrs_name-wrappr h4{
+font-size: 15px;
+text-transform: uppercase;
+color: black;
+font-weight: 800;
+}
+.reviewrs_name-wrappr span{
+font-size: 15px;
+color: var(--primary-color);
+position: relative;
+top: -5px;
+
+}
+

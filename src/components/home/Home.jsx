@@ -6,19 +6,21 @@ import Hero from "../../pages/hero/Hero";
 import Serviceb from "../../assets/trvl.jpg";
 import Servicec from "../../assets/protect.jpg";
 import Serviced from "../../assets/secrtu.jpg";
-import { RiPlayFill, RiPoliceCarFill } from "react-icons/ri";
+import { RiPoliceCarFill } from "react-icons/ri";
 import { GiCctvCamera } from "react-icons/gi";
 import { PiChatsFill } from "react-icons/pi";
 import {
   AiOutlineInstagram,
   AiOutlineTwitter,
   AiOutlineFacebook,
+  AiOutlineDoubleRight,
 } from "react-icons/ai";
 
 import { MdOutlinePerson4, MdOutlineSecurity, MdLock } from "react-icons/md";
 import "./Home.css";
 import YearsOfExperience from "../../pages/years/YearsOfExperience";
 import WhyChooseUs from "../../pages/whyUs/WhyChooseUs";
+import Testimonial from "../../pages/testimonials/Testimonial";
 
 const Home = () => {
   const [percentages, setPercentages] = useState([40, 50, 90, 0]);
@@ -30,6 +32,16 @@ const Home = () => {
       setPercentages([40, 50, 90, 0]);
     }, 500);
   }, []);
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleAccordionClick = (index) => {
+    if (activeIndex === index) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+    }
+  };
 
   return (
     <section>
@@ -380,9 +392,23 @@ const Home = () => {
         </div>
       </article>
 
+      <div className="faq-hr_divid">
+        <hr />
+      </div>
+
       <article id="faq" className="FAQ-SECTION">
         <section className="faq-main_left">
-          <div>
+          <div className="faq-text-div">
+            <svg width="70" height="20">
+              <line
+                x1="0"
+                y1="10"
+                x2="200"
+                y2="10"
+                stroke="#e66952"
+                stroke-width="2"
+              />
+            </svg>
             <span>F.A.Q</span>
           </div>
           <h1>Frequently Asked Questions</h1>
@@ -398,7 +424,144 @@ const Home = () => {
           </div>
         </section>
 
-        <section></section>
+        <section className="faq-accordion-wrappr">
+          <div
+            className={`faq-item ${activeIndex === 0 ? "active" : ""}`}
+            onClick={() => handleAccordionClick(0)}
+          >
+            <div
+              className={`faq-question_wrappr ${
+                activeIndex === 0 ? "faq-question_wrappr1" : ""
+              }`}
+            >
+              <h3>How can I reactivate my membership?</h3>
+              <span
+                className={`faq-icon ${activeIndex === 0 ? "rotate-icon" : ""}`}
+              >
+                <AiOutlineDoubleRight />
+              </span>
+            </div>
+
+            {activeIndex === 0 && (
+              <div className="faq-answer">
+                Dictumst nam tellus donec elementum viverra dis ex. Sem rhoncus
+                facilisi maecenas nam aliquet. Convallis ex rutrum semper ut
+                fames enim volutpat id nam tristique. Sapien ut iaculis
+                ridiculus natoque velit posuere. Ultricies sem inceptos in
+                malesuada diam. Nisl elit eget auctor augue elementum turpis
+                mollis blandit mi euismod magnis.
+              </div>
+            )}
+          </div>
+          <div
+            className={`faq-item ${activeIndex === 1 ? "active" : ""}`}
+            onClick={() => handleAccordionClick(1)}
+          >
+            <div
+              className={`faq-question_wrappr ${
+                activeIndex === 1 ? "faq-question_wrappr1" : ""
+              }`}
+            >
+              <h3>What are dividends? Do they get reinvested?</h3>
+              <span
+                className={`faq-icon ${activeIndex === 1 ? "rotate-icon" : ""}`}
+              >
+                <AiOutlineDoubleRight />
+              </span>
+            </div>
+
+            {activeIndex === 1 && (
+              <div className="faq-answer">
+                Dictumst nam tellus donec elementum viverra dis ex. Sem rhoncus
+                facilisi maecenas nam aliquet. Convallis ex rutrum semper ut
+                fames enim volutpat id nam tristique. Sapien ut iaculis
+                ridiculus natoque velit posuere. Ultricies sem inceptos in
+                malesuada diam. Nisl elit eget auctor augue elementum turpis
+                mollis blandit mi euismod magnis.
+              </div>
+            )}
+          </div>
+          <div
+            className={`faq-item ${activeIndex === 2 ? "active" : ""}`}
+            onClick={() => handleAccordionClick(2)}
+          >
+            <div
+              className={`faq-question_wrappr ${
+                activeIndex === 2 ? "faq-question_wrappr1" : ""
+              }`}
+            >
+              <h3>What are dividends? Do they get reinvested?</h3>
+              <span
+                className={`faq-icon ${activeIndex === 2 ? "rotate-icon" : ""}`}
+              >
+                <AiOutlineDoubleRight />
+              </span>
+            </div>
+
+            {activeIndex === 2 && (
+              <div className="faq-answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Blanditiis quas cumque at accusamus non reiciendis harum,
+                dignissimos eaque ea voluptates rerum! Nam, laboriosam adipisci.
+                Ex cupiditate eius dolorum! Eum, architecto!
+              </div>
+            )}
+          </div>
+          <div
+            className={`faq-item ${activeIndex === 3 ? "active" : ""}`}
+            onClick={() => handleAccordionClick(3)}
+          >
+            <div
+              className={`faq-question_wrappr ${
+                activeIndex === 3 ? "faq-question_wrappr1" : ""
+              }`}
+            >
+              <h3>What Are Your Terms And Conditions</h3>
+              <span
+                className={`faq-icon ${activeIndex === 3 ? "rotate-icon" : ""}`}
+              >
+                <AiOutlineDoubleRight />
+              </span>
+            </div>
+
+            {activeIndex === 3 && (
+              <div className="faq-answer">
+                Dictumst nam tellus donec elementum viverra dis ex. Sem rhoncus
+                facilisi maecenas nam aliquet. Convallis ex rutrum semper ut
+                fames enim volutpat id nam tristique. Sapien ut iaculis
+              </div>
+            )}
+          </div>
+          <div
+            className={`faq-item ${activeIndex === 4 ? "active" : ""}`}
+            onClick={() => handleAccordionClick(4)}
+          >
+            <div
+              className={`faq-question_wrappr ${
+                activeIndex === 4 ? "faq-question_wrappr1" : ""
+              }`}
+            >
+              <h3>What factors go into my Retirement goal?</h3>
+              <span
+                className={`faq-icon ${activeIndex === 4 ? "rotate-icon" : ""}`}
+              >
+                <AiOutlineDoubleRight />
+              </span>
+            </div>
+
+            {activeIndex === 4 && (
+              <div className="faq-answer">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                aliquam molestiae laborum rem nulla? Quaerat eaque unde tempore,
+                minima accusamus sapiente excepturi, quos rerum exercitationem
+                eum alias atque dolorum sed!
+              </div>
+            )}
+          </div>
+        </section>
+      </article>
+      <article>
+        <Testimonial />
       </article>
     </section>
   );
